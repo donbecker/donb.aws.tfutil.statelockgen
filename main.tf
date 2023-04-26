@@ -1,8 +1,8 @@
 locals {
-    l_tags = "${map(
-        "project", "donb.aws.tfutil.statelockgen",
-        "env", "${var.env_name}"
-    )}"
+    l_tags = tomap({
+        project = "donb.aws.tfutil.statelockgen",
+        env = "${var.env_name}"
+    })
 }
 
 provider "aws" {
